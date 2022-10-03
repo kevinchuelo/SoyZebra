@@ -1,16 +1,15 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-
+import React  from 'react';
+import NavBar from './components/NavBar/NavBar'
+import Counter from './components/Counter/Counter';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Zebra
-        </p>
- 
-      </header>
+      <NavBar />
+      <Counter />
+      <ItemListContainer/>
     </div>
   );
 }
