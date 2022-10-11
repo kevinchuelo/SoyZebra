@@ -11,11 +11,10 @@ const ItemListContainer = ({ greeting }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect( () => {
-    getProduct().then(response => {
-        console.log(response)
-        setProducts(response)
-    }).finally(() => { setLoading(false) }).catch ('error')
-}, [])
+    getProduct().then(products => {
+        setProducts(products)
+    }).finally(() => { setLoading(false) })
+}, []);
 
 if (loading) {
      return (<h1>Loading...</h1>) 
