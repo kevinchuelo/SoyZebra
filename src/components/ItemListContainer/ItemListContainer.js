@@ -1,31 +1,41 @@
 //se encarga de traer y llamar los datos
+// import './ItemListContainer.css'
+import { useState, useEffect } from 'react'
+import { getProducts, getProductsByCategory } from "../../asyncMock"
+import ItemList from '../ItemList/ItemList'
+import { useParams } from 'react-router-dom'
 
-import { useState, useEffect } from 'react';
-import { getProduct } from '../../asyncMock';
-import ItemList from "../ItemList/ItemList";
+const ItemListContainer = ({ greeting  }) => {
+    const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    const { categoryId } = useParams()
+
+    useEffect(() => {
+        setLoading(true)
+
+        const asyncFunction = categoryId ? getProductsByCategory : getProducts
+       
+        asyncFunction(categoryId).then(response => {
+            setProducts(response)
+        }).catch(error => {
+            console.log(error)
+        }).finally(() => {
+            setLoading(false)
+        })  
+    }, [categoryId])
 
 
-
-const ItemListContainer = ({ greeting }) => {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect( () => {
-    getProduct().then(products => {
-        setProducts(products)
-    }).finally(() => { setLoading(false) })
-}, []);
-
-if (loading) {
-     return (<h1>Loading...</h1>) 
+    if(loading) {
+        return <h1>Cargando productos...</h1>
     }
 
-return (
-    <div>
-        <h1>Productos</h1>
-        <ItemList products={products} />
-    </div>
-)
+
+    return (
+        <div onClick={() => console.log('click en itemlistcontainer')}>
+            <ItemList products={products} />
+        </div>
+    )
 }
 
-export default ItemListContainer;
+export default ItemListContainer
