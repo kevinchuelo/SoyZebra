@@ -1,5 +1,5 @@
 //se encarga de traer y llamar los datos
-// import './ItemListContainer.css'
+import './ItemListContainer.css'
 import { useState, useEffect } from 'react'
 import { getProducts, getProductsByCategory } from "../../asyncMock"
 import ItemList from '../ItemList/ItemList'
@@ -32,8 +32,8 @@ const ItemListContainer = ({ greeting  }) => {
 
 
     return (
-        <div onClick={() => console.log('click en itemlistcontainer')}>
-            <ItemList products={products} />
+        <div className='abs-center' onClick={() => console.log('click en itemlistcontainer')}>
+            <ItemList  products={products} />
         </div>
     )
 }
