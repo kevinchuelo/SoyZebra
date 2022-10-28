@@ -15,14 +15,14 @@ const NavBar= () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav Categories me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <NavLink to={'/category/Inicio'} className="nav-link active" aria-current="page" href="#">Inicio</NavLink>
+          <NavLink to={'/'} className="nav-link active" aria-current="page" href="#">Inicio</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to={'/category/Redes'} className="nav-link" href="#">Redes</NavLink>
+          <NavLink to={'/category/redes'} className="nav-link" href="#">Redes</NavLink>
         </li>
         <li className="nav-item dropdown">
 
-          <NavLink to={'/category/Productos'} className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+          <NavLink to={'/category/productos'} className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
             Productos
           </NavLink>
           <ul className="dropdown-menu">
@@ -33,7 +33,7 @@ const NavBar= () => {
           </ul>
         </li>
         <li className="nav-item">
-          <NavLink to={'/category/A Medida'} className="nav-link" href="#">A Medida</NavLink>
+          <NavLink to={'/category/a Medida'} className="nav-link" href="#">A Medida</NavLink>
         </li>
       </ul>
       <form className="d-flex" role="search">

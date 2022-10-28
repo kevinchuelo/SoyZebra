@@ -1,14 +1,18 @@
 // import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
+import { useContext } from 'react'
+import { CartContext } from '../../Context/CartContext'
 
 const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
-    const handleOnAdd = (quantity) => {
+    const { addItem } = useContext(CartContext)
+const handleOnAdd = (quantity) => {
+        
         const productToAdd = {
             id, name, price, quantity
         }
         console.log(productToAdd)
+        addItem(productToAdd)
     }
-
     return (
         <article className="card CardItem col-3 abs-center">
             <picture><img src={img} className="card-img-top ItemImg" alt={name} /></picture>
