@@ -1,5 +1,5 @@
 
-import CardWidget from '../CardWidget/CardWidget';
+import CartWidget from '../CartWidget/CartWidget';
 
 // import './Navbar.css'
 import { NavLink } from 'react-router-dom'
@@ -42,7 +42,7 @@ const NavBar= () => {
       </form>
     </div>
   </div>
-  <CardWidget/>
+  <CartWidget/>
   </nav>
   );
   }
